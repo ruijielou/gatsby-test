@@ -8,3 +8,4 @@
 // normalize CSS across browsers
 // custom CSS styles
 import "./src/style/style.css"
+import "./src/style/layout.css"

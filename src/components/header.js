@@ -22,12 +22,10 @@ const setLanguage = e => {
   }
 }
 
-const Header = ({ menu, siteTitle, getLanguage }) => (
-
+const Header = ({ menu, current, siteTitle, getLanguage }) => (
   <header
     style={{
-      background: `#3e3e58`,
-      marginBottom: `1.45rem`,
+      background: `#3E3E58`,
       padding: "5px",
     }}
   >
@@ -49,18 +47,21 @@ const Header = ({ menu, siteTitle, getLanguage }) => (
       <span className="site_title">{siteTitle}</span>
       <nav className="nav flex flex_center flex_1">
         {/* {menu} */}
-        {/*
-        {banner.map(item => {
-          ;<Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {item.label}
-          </Link>
-        })} */}
+
+        {menu && menu.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              to={item.path}
+              className={[
+                "nav_item",
+                current.id === item.id ? "active" : null,
+              ].join(" ")}
+            >
+              {getLanguage() == "English" ? item.enLabel : item.zhLabel}
+            </Link>
+          )
+        })}
       </nav>
       <div className="dropdown" data-dropdown="true">
         <div
@@ -95,7 +96,7 @@ const Header = ({ menu, siteTitle, getLanguage }) => (
         </div>
       </div>
       <Link
-        to="https://www.baidu.com"
+        to="/"
         style={{
           color: `white`,
           fontSize: "14px",

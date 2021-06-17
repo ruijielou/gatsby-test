@@ -8,9 +8,8 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import Seo from "./seo"
 import Header from "./header"
-import "./layout.css"
 
 const hiddenDropdown = e => {
   const dropdown_source = document.querySelector(".dropdown_source"),
@@ -21,13 +20,12 @@ const hiddenDropdown = e => {
   }
 }
 
-const Layout = ({ children }) => {
+const Layout = ({ layoutData, route, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
-          banner
         }
       }
     }
@@ -45,10 +43,13 @@ const Layout = ({ children }) => {
       return "中文"
     }
   }
- 
+
   return (
     <div onClick={hiddenDropdown}>
+      <Seo title={getLanguage() === 'English' ? route?.enLabel || "" : route?.zhLabel || ""} />
       <Header
+        menu={layoutData}
+        current={route}
         getLanguage={getLanguage}
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />

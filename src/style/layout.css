@@ -413,3 +413,17 @@ pre tt:after {
     font-size: 100%;
   }
 }
+body, html {
+  height: 100%;
+}
+.nav_item {
+  color: #EEEEEE;
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.nav_item.active{
+  color: #3DBDB6;
+  font-weight: bold;
+}

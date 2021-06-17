@@ -20,14 +20,7 @@ exports.createPages = ({ actions }) => {
     createPage({
       path: route.path,
       component: pages[route.id],
-      context: { route },
+      context: { layoutData, route },
     })
   })
-
-  // createRedirect({
-  //   fromPath: `/`,
-  //   toPath: `/home`,
-  //   redirectInBrowser: true,
-  //   isPermanent: true,
-  // })
 }
