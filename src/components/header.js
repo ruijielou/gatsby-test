@@ -22,7 +22,7 @@ const setLanguage = e => {
   }
 }
 
-const Header = ({ menu, current, siteTitle, getLanguage }) => (
+const Header = ({ menu, current, siteTitle, language }) => (
   <header
     style={{
       background: `#3E3E58`,
@@ -37,11 +37,9 @@ const Header = ({ menu, current, siteTitle, getLanguage }) => (
         padding: `0 0.5rem`,
       }}
     >
-      <StaticImage
-        src="../images/logo.svg"
-        height={35}
-        quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
+      <img
+        src="/logo.svg"
+        height="35"
         alt={siteTitle}
       />
       <span className="site_title">{siteTitle}</span>
@@ -55,10 +53,10 @@ const Header = ({ menu, current, siteTitle, getLanguage }) => (
               to={item.path}
               className={[
                 "nav_item",
-                current.id === item.id ? "active" : null,
+                current === item.id ? "active" : null,
               ].join(" ")}
             >
-              {getLanguage() == "English" ? item.enLabel : item.zhLabel}
+              {language == "English" ? item.enLabel : item.zhLabel}
             </Link>
           )
         })}
@@ -70,7 +68,7 @@ const Header = ({ menu, current, siteTitle, getLanguage }) => (
           onClick={dropdownClick}
         >
           <span data-dropdown="true" suppressHydrationWarning>
-            {getLanguage()}
+            {language}
           </span>
           <svg
             stroke="currentColor"

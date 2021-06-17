@@ -5,22 +5,54 @@
  */
 
 // You can delete this file if you're not using it
-const layoutData = require('./static/config.json');
-console.log(layoutData, "lassss");
-exports.createPages = ({ actions }) => {
-  const { createPage } = actions;
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const renderPage = require.resolve(`./src/templates/pageTemplate.js`);
   const pages = {
-    home: require.resolve(`./src/templates/home.js`),
-    product: require.resolve(`./src/templates/product.js`),
-    aboutus: require.resolve(`./src/templates/aboutus.js`),
-    solution: require.resolve(`./src/templates/solution.js`),
-    partner: require.resolve(`./src/templates/partner.js`),
+    home: {
+      id: "home",
+      path: "/home",
+      component: renderPage,
+    },
+    product: {
+      id: "product",
+      path: "/product",
+      component: renderPage,
+    },
+    aboutus: {
+      id: "aboutus",
+      path: "/aboutus",
+      component: renderPage,
+    },
+    solution: {
+      id: "solution",
+      path: "/solution",
+      component: renderPage,
+    },
+    partner: {
+      id: "partner",
+      path: "/partner",
+      component: renderPage,
+    },
   }
-  layoutData && layoutData.forEach(route => {
-    createPage({
-      path: route.path,
-      component: pages[route.id],
-      context: { layoutData, route },
-    })
-  })
+  const data = await graphql(`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  for (const key in pages) {
+    if (Object.hasOwnProperty.call(pages, key)) {
+      const element = pages[key]
+      createPage({
+        path: element.path,
+        component: element.component,
+        context: { id: element.id, content:data },
+      })
+    }
+  }
 }
