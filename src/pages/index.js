@@ -1,29 +1,37 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+// import { useEffect } from 'react';
+// import { navigate } from 'gatsby';
 
-const IndexPage = () => (
-  <Layout>
-    <Seo title="首页" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/logo.svg"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  React.useEffect(() => {
+    navigate('/home/');
+  }, [])
+  return null;
+  // <Layout>
+  //   <Seo title="首页" />
+  //   <h1>Hi people</h1>
+  //   <p>Welcome to your new Gatsby site.</p>
+  //   <p>Now go build something great.</p>
+  //   <StaticImage
+  //     src="../images/logo.svg"
+  //     width={300}
+  //     quality={95}
+  //     formats={["AUTO", "WEBP", "AVIF"]}
+  //     alt="A Gatsby astronaut"
+  //     style={{ marginBottom: `1.45rem` }}
+  //   />
+  //   <p>
+  //     <Link to="/page-2/">Go to page 2</Link> <br />
+  //     <Link to="/product/">Go to product</Link> <br />
+
+  //     <Link to="/auboutus/">Go to "auboutus"</Link>
+  //   </p>
+  // </Layout>
+}
 
 export default IndexPage

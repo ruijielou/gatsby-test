@@ -1,13 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `赤兔科技`,
-    description: ``,
+    description: `赤兔RPA`,
     author: `emma`,
+    keywords: `RPA, 赤兔, chitu, 赤兔科技`,
     banner: 
        "home,product,solution,partner,aboutus"
-      // zh: "home,product,solution,partner,aboutus"
-    
-    // banner: [{"id":"home","label":"首页"},{"id":"product","label":"产品"},{"id":"solution","label":"解决方案"},{"id":"partner","label":"合作伙伴"},{"id":"aboutus","label":"关于我们"}],
   },
   plugins: [
     {
@@ -45,9 +43,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
-  flags: {
-    THE_FLAG: false,
-    PRESERVE_WEBPACK_CACHE: true,
-  },
+  ]
 }

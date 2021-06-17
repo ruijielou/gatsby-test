@@ -1,0 +1,32 @@
+[
+  {
+    "id": "home",
+    "path": "/home",
+    "zhLabel": "首页",
+    "enLabel": "HOME"
+  },
+  {
+    "id": "product",
+    "path": "/product",
+    "zhLabel": "产品",
+    "enLabel": "PRODUCT"
+  },
+  {
+    "id": "solution",
+    "path": "/solution",
+    "zhLabel": "解决方案",
+    "enLabel": "SOLUTION"
+  },
+  {
+    "id": "partner",
+    "path": "/partner",
+    "zhLabel": "合作伙伴",
+    "enLabel": "PARTNER"
+  },
+  {
+    "id": "aboutus",
+    "path": "/aboutus",
+    "zhLabel": "关于我们",
+    "enLabel": "ABOUTUS"
+  }
+]

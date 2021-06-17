@@ -8,4 +8,3 @@
 // normalize CSS across browsers
 // custom CSS styles
 import "./src/style/style.css"
-console.log(sessionStorage, "sessionStorage");

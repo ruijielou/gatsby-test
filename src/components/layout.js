@@ -13,11 +13,9 @@ import Header from "./header"
 import "./layout.css"
 
 const hiddenDropdown = e => {
-  console.log(e)
   const dropdown_source = document.querySelector(".dropdown_source"),
     target = e.target
   const isDropDownEl = target.dataset?.dropdown
-  console.log(isDropDownEl)
   if (!isDropDownEl) {
     dropdown_source.style.display = "none"
   }
@@ -47,32 +45,10 @@ const Layout = ({ children }) => {
       return "中文"
     }
   }
-
-  const menu = () => {
-    const banner = data.site.siteMetadata?.banner
-    console.log(banner);
-    let menu = null
-    // for (const key in banner) {
-    //   menu += (
-    //     <Link
-    //       to="/"
-    //       style={{
-    //         color: `white`,
-    //         textDecoration: `none`,
-    //       }}
-    //     >
-    //       {banner[key]}
-    //     </Link>
-    //   )
-    // }
-    return menu
-  }
-  const banner = data.site.siteMetadata.banner
-  console.log(banner, "data.site.siteMetadata");
+ 
   return (
     <div onClick={hiddenDropdown}>
       <Header
-        // menu={menu}
         getLanguage={getLanguage}
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
