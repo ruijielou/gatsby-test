@@ -59,9 +59,9 @@ class Layout extends React.Component {
     const language = this.getLanguage()
     const { children, sitedata, id } = this.props
     const {menuData} = this.state
-    const currentRoute = menuData && menuData.find(item => item.id == id)
+    const currentRoute = menuData && menuData.find(item => item.id === id)
     const seoTitle = currentRoute
-      ? language == "English"
+      ? language === "English"
         ? currentRoute.enLabel
         : currentRoute.zhLabel
       : id

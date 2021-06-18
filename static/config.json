@@ -3,7 +3,13 @@
     "id": "home",
     "path": "/home",
     "zhLabel": "首页",
-    "enLabel": "HOME"
+    "enLabel": "HOME",
+    "en": {
+      "welcome": "Welcome"
+    },
+    "zh": {
+      "welcome": "欢迎"
+    }
   },
   {
     "id": "product",

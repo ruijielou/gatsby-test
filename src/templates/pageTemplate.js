@@ -11,19 +11,19 @@ const PageTemplate = ({ pageContext: { id, content } }) => {
   const data = content.data.site.siteMetadata;
 
   const RenderMain = () => {
-    if(id == 'home') {
+    if(id === 'home') {
       return (<Home></Home>)
     }
-    if(id == 'product') {
+    if(id === 'product') {
       return (<Product></Product>)
     }
-    if(id == 'aboutus') {
+    if(id === 'aboutus') {
       return (<Aboutus></Aboutus>)
     }
-    if(id == 'partner') {
+    if(id === 'partner') {
       return (<Partner></Partner>)
     }
-    if(id == 'solution') {
+    if(id === 'solution') {
       return (<Solution></Solution>)
     }
     return null
@@ -31,7 +31,7 @@ const PageTemplate = ({ pageContext: { id, content } }) => {
   return (
     <Layout id={id} sitedata={data}>
       <p>
-        Welcome to{id}
+        Welcome to {id}
       </p>
       {
        RenderMain()

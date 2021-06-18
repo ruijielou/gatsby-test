@@ -1,7 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
 const dropdownClick = e => {
   const dropdown_source = document.querySelector(".dropdown_source")
@@ -37,35 +36,35 @@ const Header = ({ menu, current, siteTitle, language }) => (
         padding: `0 0.5rem`,
       }}
     >
-      <img
-        src="/logo.svg"
-        height="35"
-        alt={siteTitle}
-      />
+      <img src="/logo.svg" height="35" alt={siteTitle} />
       <span className="site_title">{siteTitle}</span>
       <nav className="nav flex flex_center flex_1">
         {/* {menu} */}
 
-        {menu && menu.map((item, index) => {
-          return (
-            <Link
-              key={index}
-              to={item.path}
-              className={[
-                "nav_item",
-                current === item.id ? "active" : null,
-              ].join(" ")}
-            >
-              {language == "English" ? item.enLabel : item.zhLabel}
-            </Link>
-          )
-        })}
+        {menu &&
+          menu.map((item, index) => {
+            return (
+              <Link
+                key={index}
+                to={item.path}
+                className={[
+                  "nav_item",
+                  current === item.id ? "active" : null,
+                ].join(" ")}
+              >
+                {language === "English" ? item.enLabel : item.zhLabel}
+              </Link>
+            )
+          })}
       </nav>
       <div className="dropdown" data-dropdown="true">
         <div
           className="dropdown_title"
           data-dropdown="true"
-          onClick={dropdownClick}
+          role="button"
+          styling="link"
+          tabIndex={0}
+          onKeyDown={dropdownClick}
         >
           <span data-dropdown="true" suppressHydrationWarning>
             {language}
@@ -84,10 +83,20 @@ const Header = ({ menu, current, siteTitle, language }) => (
         </div>
         <div data-dropdown="true" className="dropdown_source">
           <ul data-dropdown="true">
-            <li onClick={setLanguage} data-source="zh" data-dropdown="true">
+            <li
+              styling="link"
+              onClick={setLanguage}
+              data-source="zh"
+              data-dropdown="true"
+            >
               中文
             </li>
-            <li onClick={setLanguage} data-source="en" data-dropdown="true">
+            <li
+              styling="link"
+              onClick={setLanguage}
+              data-source="en"
+              data-dropdown="true"
+            >
               English
             </li>
           </ul>

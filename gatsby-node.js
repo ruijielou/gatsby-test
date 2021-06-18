@@ -5,10 +5,12 @@
  */
 
 // You can delete this file if you're not using it
+const locales = require(`./config/i18n`)
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const renderPage = require.resolve(`./src/templates/pageTemplate.js`);
+exports.createPages = async ({ graphql, page, actions }) => {
+  const { createPage, deletePage } = actions
+  deletePage(page)
+  const renderPage = require.resolve(`./src/templates/pageTemplate.js`)
   const pages = {
     home: {
       id: "home",
@@ -51,7 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: element.path,
         component: element.component,
-        context: { id: element.id, content:data },
+        context: { id: element.id, content: data },
       })
     }
   }
