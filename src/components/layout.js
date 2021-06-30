@@ -27,7 +27,7 @@ class Layout extends React.Component {
     const isBrowser = typeof window !== "undefined"
     let lang = "zh"
     if (isBrowser) {
-      lang = sessionStorage.lang
+      lang = localStorage.lang
     }
     if (lang === "en") {
       return "English"

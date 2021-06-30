@@ -413,16 +413,7 @@ pre tt:after {
 body, html, #___gatsby {
   height: 100%;
 }
-.nav_item {
-  color: #EEEEEE;
+a, a:hover,a:focus {
   text-decoration: none;
-  padding: 0 10px;
-  font-size: 14px;
-  box-sizing: border-box;
-  font-weight: bold;
-  /* -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: antialiased; */
-}
-.nav_item.active, .nav_item:hover{
-  color: #3DBDB6;
+  color: #333;
 }

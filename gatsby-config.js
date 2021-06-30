@@ -1,4 +1,6 @@
 module.exports = {
+  pathPrefix: '', // CircleCi Artifacts prefix
+  assetPrefix: process.env.ASSET_PREFIX_URL,
   siteMetadata: {
     title: `赤兔科技`,
     description: `赤兔RPA`,
@@ -9,12 +11,11 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/config`,// 文件路径
-        name: 'config', // 名称，可以用来过滤
-        ignore: [] // 可选的，忽略的文件
-      }
+        path: `${__dirname}/config/translations`,
+        name: `translations`,
+      },
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -25,6 +26,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

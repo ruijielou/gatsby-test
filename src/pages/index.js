@@ -3,7 +3,13 @@ import { navigate } from "gatsby"
 
 const IndexPage = () => {
   React.useEffect(() => {
-    navigate('/home/');
+    const localLang = localStorage.getItem("lang")
+    let lang = localLang
+    if(lang === 'en') {
+      navigate('/en/home/');
+    }else {
+      navigate('/home/');
+    }
   }, [])
   return null;
 }
