@@ -1,4 +1,11 @@
 {
+  "navigation" : "Navigation",
+  "languageFiled" : "language",
+  "aboutusMenu": "ABOUTUS",
+  "partnerMenu": "PARTNER",
+  "solutionMenu": "SOLUTION",
+  "productMenu": "PRODUCT",
+  "homeMenu": "HOME",
   "hello": "Hallo und herzlich Willkommen zu dieser i18n Beispielseite!",
   "subline": "Lies doch ein paar coole Artikel von mir!",
   "backToHome": "Zurück zur Startseite"

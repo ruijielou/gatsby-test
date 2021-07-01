@@ -1,17 +1,18 @@
 import * as React from "react"
 import { navigate } from "gatsby"
+import "../style/loading.css"
 
 const IndexPage = () => {
   React.useEffect(() => {
-    const localLang = localStorage.getItem("lang")
-    let lang = localLang
-    if(lang === 'en') {
-      navigate('/en/home/');
-    }else {
-      navigate('/home/');
+    const navLanguage = (
+      navigator.language || navigator.browserLanguage
+    ).toLowerCase()
+    if (navLanguage.indexOf("zh") >= 0) {
+      navigate("/home/")
+    } else {
+      navigate("/en/home/")
     }
   }, [])
-  return null;
+  return (<div className="loader"></div>)
 }
-
 export default IndexPage

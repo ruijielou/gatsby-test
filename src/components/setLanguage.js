@@ -10,11 +10,11 @@ const SetLanguage = ({ language }) => {
       : (dropdown_source.style.display = "block")
   }
 
-  const toggleLanguage = lang => {
-    if (lang) {
-      localStorage.lang = lang
-    }
-  }
+  // const toggleLanguage = lang => {
+  //   if (lang) {
+  //     localStorage.lang = lang
+  //   }
+  // }
 
   return (
     <div className="dropdown" onClick={dropdownClick} data-dropdown="true">
@@ -26,7 +26,7 @@ const SetLanguage = ({ language }) => {
         tabIndex={0}
       >
         <span data-dropdown="true" suppressHydrationWarning>
-          {language}
+          {language && language === "en" ? "English" : "中文"}
         </span>
         <svg
           stroke="currentColor"
@@ -42,13 +42,13 @@ const SetLanguage = ({ language }) => {
       </div>
       <div data-dropdown="true" className="dropdown_source">
         <ul data-dropdown="true">
-          <Link to="/home" onClick={() => toggleLanguage("zh")}>
-            <li styling="link" className={language == '中文' ? 'active' : ""} data-source="zh" data-dropdown="true">
+          <Link to="/home">
+            <li styling="link" className={language == 'zh' ? 'active' : ""} data-source="zh" data-dropdown="true">
               中文
             </li>
           </Link>
-          <Link to="/en/home" onClick={() => toggleLanguage("en")}>
-            <li styling="link" className={language == 'English' ? 'active' : ""} data-source="en" data-dropdown="true">
+          <Link to="/en/home">
+            <li styling="link" className={language == 'en' ? 'active' : ""} data-source="en" data-dropdown="true">
               English
             </li>
           </Link>

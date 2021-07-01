@@ -1,4 +1,11 @@
 {
+  "navigation" : "导航",
+  "languageFiled" : "语言",
+  "aboutusMenu": "关于我们",
+  "partnerMenu": "合作伙伴",
+  "solutionMenu": "解决方案",
+  "productMenu": "产品",
+  "homeMenu": "首页",
   "hello": "大家好，欢迎来到这个i18n示例页面!",
   "subline": "从我这里读一些很酷的文章!",
   "backToHome": "返回主页"

@@ -10,7 +10,7 @@ const locales = require(`./config/i18n.js`);
 
 exports.createPages = async ({ graphql, page, actions }) => {
   const { createPage } = actions
-
+  // deletePage(page)
   const renderPage = require.resolve(`./src/templates/pageTemplate.js`)
   const pages = {
     home: {
