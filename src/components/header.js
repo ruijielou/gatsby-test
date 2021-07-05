@@ -26,10 +26,8 @@ const Header = ({ menu, current, language, siteTitle }) => {
 
   return (
     <header
-      style={{
-        background: `#3E3E58`,
-        padding: "12px",
-      }}
+    className="header"
+    id={current}
     >
       <div
         className="flex"

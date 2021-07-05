@@ -1,0 +1,17 @@
+[data-bg="home"] {
+  background-image: url(../images/home/ditu.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100vh;
+}
+.home_container {
+  min-height: 100vh;
+  color: #fff;
+}
+.page-text {
+  line-height: 1.8;
+  font-size: 18px;
+}
+.page-1 {
+  height: calc(100vh - 52px)
+}

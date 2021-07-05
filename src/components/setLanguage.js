@@ -4,10 +4,11 @@ import { Link } from "gatsby"
 const SetLanguage = ({ language }) => {
   const dropdownClick = e => {
     const dropdown_source = document.querySelector(".dropdown_source")
-    const dropdownShow = dropdown_source.style.display
-    dropdownShow === "block"
-      ? (dropdown_source.style.display = "none")
-      : (dropdown_source.style.display = "block")
+    dropdown_source.classList.toggle("dropdown_source_show")
+    // const dropdownShow = dropdown_source.style.display
+    // dropdownShow === "none"
+    //   ? (dropdown_source.style.display = "block")
+    //   : (dropdown_source.style.display = "none")
   }
 
   // const toggleLanguage = lang => {

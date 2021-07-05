@@ -54,7 +54,7 @@ const PageTemplate = ({ pageContext: { id, content, locale } }) => {
  
   const RenderMain = () => {
     if (id === "home") {
-      return <Home></Home>
+      return <Home id="home"></Home>
     }
     if (id === "product") {
       return <Product></Product>
@@ -79,9 +79,8 @@ const PageTemplate = ({ pageContext: { id, content, locale } }) => {
       menuData={menuData}
       language={locale.siteLanguage}
     >
-      <p>Welcome to {id}</p>
       {RenderMain()}
-      <Link to="/">Go back to the homepage</Link>
+      {/* <Link to="/">Go back to the homepage</Link> */}
     </Layout>
   )
 }

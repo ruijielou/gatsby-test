@@ -13,9 +13,8 @@ import "./src/style/layout.css"
 document.querySelector("body").addEventListener("click", (e) => {
   const dropdown_source = document.querySelector(".dropdown_source"),
     target = e.target
-    console.log(dropdown_source,"dropdown_source");
   const isDropDownEl = target.dataset?.dropdown
   if (!isDropDownEl && dropdown_source) {
-    dropdown_source.style.display = "none"
+    dropdown_source.classList.remove("dropdown_source_show")
   }
 })

@@ -21,7 +21,7 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
   const {languageFiled, navigation} = useTranslations(language)
 
   return (
-    <>
+    <div data-bg={id}>
       <Seo title={seoTitle} />
       <Header
         current={id}
@@ -89,7 +89,7 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          minHeight: "100vh",
         }}
       >
         <main>{children}</main>
@@ -103,7 +103,7 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
