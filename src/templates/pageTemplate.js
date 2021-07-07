@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Product from "../components/product"
 import Home from "../components/home"
@@ -70,7 +70,7 @@ const PageTemplate = ({ pageContext: { id, content, locale } }) => {
     }
     return null
   }
-  const seoTitle = menuData.find(item => item.id == id).label
+  const seoTitle = menuData.find(item => item.id === id).label
   return (
     <Layout
       id={id}

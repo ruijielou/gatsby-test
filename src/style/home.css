@@ -8,10 +8,27 @@
   min-height: 100vh;
   color: #fff;
 }
+.page-des-text {
+  font-family: HiraginoSansGB-W3;
+  font-size: 16px;
+  color: #eeeeee;
+  letter-spacing: 0;
+  line-height: 28px;
+}
 .page-text {
   line-height: 1.8;
   font-size: 18px;
+  font-family: HiraginoSansGB-W6;
+  color: #ffffff;
+  letter-spacing: 0;
 }
-.page-1 {
-  height: calc(100vh - 52px)
+.page-text-title {
+  font-size: 26px;
+}
+.sub-title {
+  font-size: 18px;
+}
+.value-item {
+  padding: 2em 0;
+  width: 33%;
 }
