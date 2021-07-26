@@ -1,7 +1,7 @@
 [data-bg="home"] {
   background-image: url(../images/home/ditu.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 100%;
   min-height: 100vh;
 }
 .home_container {
@@ -19,11 +19,12 @@
   line-height: 1.8;
   font-size: 18px;
   font-family: HiraginoSansGB-W6;
-  color: #ffffff;
+  color: #EEEEEE;
   letter-spacing: 0;
 }
 .page-text-title {
   font-size: 26px;
+  color: #FFFFFF;
 }
 .sub-title {
   font-size: 18px;
@@ -31,4 +32,45 @@
 .value-item {
   padding: 2em 0;
   width: 33%;
+}
+
+.home-page-cotent {
+  width: 40%;
+}
+.homeText {
+  height: 46px;
+  width: 100%;
+  background-image: url("../images/home/home-text.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.page-4 .value-item {
+  padding: 0 0 2em 0;
+  width: 24%;
+}
+.page-4 .main-content {
+  margin-top: 6vh;
+}
+.page-5 .value-item {
+  width: 14%;
+}
+
+@media only screen and (max-width: 480px) {
+  .page-text {
+    font-size: 16px;
+  }
+  .home-page-cotent {
+    width: 100% !important;
+  }
+  [data-bg="home"] .value-item {
+    width: 45%;
+  }
+  [data-bg="home"] .page-2 > div:first-child,
+  [data-bg="home"] .page-3 .page-des-text {
+    display: none;
+  }
+  [data-bg="home"] .page-3 .page-text-title,
+  [data-bg="home"] .page-4 .page-text-title {
+    font-size: 18px;
+  }
 }

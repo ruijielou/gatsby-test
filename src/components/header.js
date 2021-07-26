@@ -4,33 +4,24 @@ import { Link } from "gatsby"
 import SetLanguage from "./setLanguage"
 
 const Header = ({ menu, current, language, siteTitle }) => {
-  /**注释获取本地存储语言信息 */
-  // let [language, setLanguage] = React.useState('')
-  // React.useEffect(() => {
-  //   const localLang = localStorage.getItem("lang")
-
-  //   let lang = localLang
-  //   console.log(navigator.language, "navigator",language)
-  //   if (!localLang) {
-  //     lang = navigator.language.split("-")
-  //   }
-
-  //   const str = lang == "en" ? "English" : "中文"
-  //   setLanguage((language = str))
-  // }, [])
-  // document.querySelector(".menu-link").addEventListener("click", function (e) {
-  //   e.preventDefault()
-  //   document.querySelector(".menu").classList.toggle("open")
-  //   document.querySelector(".menu-overlay").classList.toggle("open")
-  // })
+  let currentIndex = 1;
+  window.onscroll = () => {
+    console.log(window.scrollY, "window.scrollY")
+    if (window.scrollY > 150) {
+      document.querySelector('.header').dataset.id = ""
+    }
+    if (window.scrollY <= 150) {
+      document.querySelector('.header').dataset.id = current
+    }
+    // console.log(currentIndex * window.screen.height, "currentIndex * window.screen.height");
+      // document.querySelector('.header').dataset.id = current
+    
+  }
 
   return (
-    <header
-    className="header"
-    id={current}
-    >
+    <header className="header" id={current} data-id={current}>
       <div
-        className="flex"
+        className="flex h_100"
         style={{
           margin: `0 auto`,
           width: "100%",

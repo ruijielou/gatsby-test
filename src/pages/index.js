@@ -8,9 +8,9 @@ const IndexPage = () => {
       navigator.language || navigator.browserLanguage
     ).toLowerCase()
     if (navLanguage.indexOf("zh") >= 0) {
-      navigate("/home/")
+      navigate("/home")
     } else {
-      navigate("/en/home/")
+      navigate("/en/home")
     }
   }, [])
   return (<div className="loader"></div>)

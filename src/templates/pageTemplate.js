@@ -16,7 +16,7 @@ const PageTemplate = ({ pageContext: { id, content, locale } }) => {
     solutionMenu,
     productMenu,
     homeMenu,
-  } = useTranslations(locale.siteLanguage)
+  } = useTranslations(locale.siteLanguage || 'zh')
   const headerData = {
     en: null,
     zh: null,
@@ -77,7 +77,7 @@ const PageTemplate = ({ pageContext: { id, content, locale } }) => {
       sitedata={data}
       seoTitle={seoTitle}
       menuData={menuData}
-      language={locale.siteLanguage}
+      language={locale.siteLanguage || 'zh'}
     >
       {RenderMain()}
       {/* <Link to="/">Go back to the homepage</Link> */}

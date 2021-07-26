@@ -10,7 +10,7 @@
 import "./src/style/style.css"
 import "./src/style/layout.css"
 
-document.querySelector("body").addEventListener("click", (e) => {
+document.querySelector("body").addEventListener("click", e => {
   const dropdown_source = document.querySelector(".dropdown_source"),
     target = e.target
   const isDropDownEl = target.dataset?.dropdown

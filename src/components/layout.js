@@ -15,10 +15,10 @@ import useTranslations from "./useTranslations"
 const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
   const menuClick = e => {
     e.preventDefault()
-    document.querySelector(`[data-menu=${id}]`).classList.toggle("open")
-    document.querySelector(`[data-id=${id}]`).classList.toggle("open")
+    document.querySelector(".menu").classList.toggle("open")
+    document.querySelector(`.menu-overlay`).classList.toggle("open")
   }
-  const {languageFiled, navigation} = useTranslations(language)
+  const { languageFiled, navigation } = useTranslations(language)
 
   return (
     <div data-bg={id}>
@@ -40,6 +40,14 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
         </a>
       </div>
       <div className="menu-overlay" data-id={id}>
+        <div className="menu-overlay-link">
+          <a href="#" className="menu-link" onClick={menuClick}>
+            <span className="menu-icon">
+              <span className="menu-line menu-line-1"></span>
+              <span className="menu-line menu-line-3"></span>
+            </span>
+          </a>
+        </div>
         <div className="js-nav-header nav-header">
           <span className="nav-header-text">{navigation}</span>
           <div
@@ -88,7 +96,7 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: "80%",
           minHeight: "100vh",
         }}
       >
