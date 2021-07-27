@@ -1,6 +1,5 @@
 import * as React from "react"
 import "../style/home.css"
-import { StaticImage } from "gatsby-plugin-image"
 // import homeText from "../images/home/home-text.png"
 import jiqiren from "../images/home/jiqiren.png"
 import icon_1 from "../images/home/icon_1.svg"
@@ -26,6 +25,18 @@ import img5 from "../images/home/5.png"
 import img6 from "../images/home/6.png"
 import img7 from "../images/home/7.png"
 import img8 from "../images/home/8.png"
+
+import product1 from "../images/home/product1.png"
+import product2 from "../images/home/product2.png"
+import product3 from "../images/home/product3.png"
+import product4 from "../images/home/product4.png"
+import product5 from "../images/home/product5.png"
+
+import pinpai_1 from "../images/home/pinpai_1.png"
+import pinpai_2 from "../images/home/pinpai_2.png"
+import pinpai_3 from "../images/home/pinpai_3.png"
+import pinpai_4 from "../images/home/pinpai_4.png"
+import pinpai_5 from "../images/home/pinpai_5.png"
 
 const staticImg = [img1, img2, img3, img4, img5, img6, img7, img8]
 const Home = i18data => {
@@ -143,9 +154,109 @@ const Home = i18data => {
       icon: null,
     },
   ]
+  let products = [
+    {
+      img: product1,
+      name: "奥康",
+      isActive: true,
+      logo: pinpai_1,
+      desc:
+        " 赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
+    },
+    {
+      img: product2,
+      name: "coinbig",
+      isActive: false,
+      logo: pinpai_2,
+      desc:
+        " 赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
+    },
+    {
+      img: product3,
+      name: "hooli",
+      isActive: false,
+      logo: pinpai_3,
+      desc:
+        " 赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
+    },
+    {
+      img: product4,
+      name: "金证前海",
+      isActive: false,
+      logo: pinpai_4,
+      desc:
+        " 赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
+    },
+    {
+      img: product5,
+      name: "开普勒星球",
+      isActive: false,
+      logo: pinpai_5,
+      desc:
+        " 赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
+    },
+  ]
+  const [productData, setProductData] = React.useState(products)
+
+  const mouseOver = index => {
+    if (productData[index].isActive) return
+    let newData = []
+    productData.forEach((item, o) => {
+      let element = item
+      element.isActive = false
+      if (o === index) {
+        element.isActive = true
+      }
+      newData.push(element)
+    })
+    setProductData(newData)
+  }
+  const news = [
+    {
+      time: "03-02",
+      year: "2021",
+      title: "民生银行广州分行携同普尔瀚达科技莅临我司考察交流",
+      context:
+        "民生银行广州分行跨行资金管理负责人胡迟、深圳市普尔瀚达科技有限公司CEO雷有民一行莅临我司考察交流",
+    },
+    {
+      time: "02-21",
+      year: "2021",
+      title: "“2021年赤兔科技交付提能训练营”第一期圆满举办",
+      context:
+        "由赤兔科技研发中心、交付中心和人力行政部共同组织的“2021年赤兔科技交付提能训练营”盛大开班",
+    },
+    {
+      time: "02-28",
+      year: "2021",
+      title: "“2021年赤兔科技交付提能训练营”第一期圆满举办",
+      context:
+        "由赤兔科技研发中心、交付中心和人力行政部共同组织的“2021年赤兔科技交付提能训练营”盛大开班",
+    },
+    {
+      time: "02-10",
+      year: "2021",
+      title: "凝心聚力，砥砺前行——赤兔2021年管理干部就职仪式",
+      context: "赤兔科技2021年管理干部就职仪式在深圳总部顺利召开",
+    },
+    {
+      time: "03-10",
+      year: "2021",
+      title: "凝心聚力，砥砺前行——赤兔2021年管理干部就职仪式",
+      context: "赤兔科技2021年管理干部就职仪式在深圳总部顺利召开",
+    },
+    {
+      time: "04-10",
+      year: "2021",
+      title: "民生银行广州分行携同普尔瀚达科技莅临我司考察交流",
+      context:
+        "民生银行广州分行跨行资金管理负责人胡迟、深圳市普尔瀚达科技有限公司CEO雷有民一行莅临我司考察交流",
+    },
+  ]
+
   return (
     <div className="home_container">
-      <div className="full-height page-1 flex flex_column justify-center">
+      <div className=" page-1 flex flex_column justify-center">
         <div className="homeText">
           {/* <img height="46" src={homeText} /> */}
         </div>
@@ -156,9 +267,9 @@ const Home = i18data => {
           <span className="rpa-btn">申请试用</span>
         </div>
       </div>
-      <div className="full-height page-2 flex flex_center">
+      <div className=" page-2 flex flex_center">
         <div className="flex_1">
-          <img style={{ width: "80%" }} src={jiqiren} />
+          <img style={{ width: "80%" }} alt="RPA" src={jiqiren} />
         </div>
         <div className="flex_1">
           <p className="page-text page-text-title">什么是RPA机器人流程自动化</p>
@@ -171,7 +282,7 @@ const Home = i18data => {
           </p>
         </div>
       </div>
-      <div className="full-height page-3">
+      <div className=" page-3 flex flex_column flex_center">
         <p className="page-text page-text-title text-center">
           RPA可以为您带来什么价值
         </p>
@@ -179,7 +290,11 @@ const Home = i18data => {
           {page3.map((item, index) => {
             return (
               <li className="text-center value-item" key={index}>
-                <img style={{ marginBottom: "1em" }} src={item.icon} />
+                <img
+                  style={{ marginBottom: "1em" }}
+                  alt={item.title}
+                  src={item.icon}
+                />
                 <h5 className="page-text sub-title">{item.title}</h5>
                 <p className="page-des-text">{item.subTile}</p>
               </li>
@@ -201,7 +316,7 @@ const Home = i18data => {
                 className="text-center value-item flex flex_column"
                 key={index}
               >
-                <img src={staticImg[index]} />
+                <img src={staticImg[index]} alt={item} />
                 <p className="page-text text-left">{item}</p>
               </li>
             )
@@ -217,12 +332,96 @@ const Home = i18data => {
                 className="text-center value-item flex flex_column flex_center"
                 key={index}
               >
-                <img style={{width:item.type == 2 ? '16.5px':""}} src={item.icon} />
-                <p className="page-text" style={{height: '18px'}}>{item.title}</p>
+                <img
+                  style={{ width: item.type == 2 ? "16.5px" : "" }}
+                  alt={item.title}
+                  src={item.icon}
+                />
+                <p className="page-text" style={{ height: "18px" }}>
+                  {item.title}
+                </p>
               </li>
             )
           })}
         </ul>
+      </div>
+      {/* Product information 产品资讯 */}
+      <div className="product-information flex flex_column flex_center">
+        <p className="page-text">
+          产品资讯，寻求RPA帮助 都可以联系我们，开启赤兔RPA之旅，解放你的双手
+        </p>
+        <div className="btn-group">
+          <span className="rpa-btn" type="info">
+            申请试用
+          </span>
+          <span className="rpa-btn" type="default">
+            联系我们
+          </span>
+        </div>
+      </div>
+      <div className="home-partner">
+        <h5 className="page-text page-text-title text-center">
+          我们的合作伙伴
+        </h5>
+        <div className="product-main">
+          {productData.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={[
+                  "product-item flex",
+                  item.isActive ? "active" : null,
+                ].join(" ")}
+              >
+                <div
+                  className="product-img flex_2"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                ></div>
+                <div className="product-desc flex_1">
+                  <p className="text-left">{item.name}</p>
+                  <p>{item.desc}</p>
+                </div>
+              </div>
+            )
+          })}
+          <div className="product-logo flex flex_between">
+            {productData.map((item, index) => {
+              return (
+                <div
+                  key={index}
+                  onClick={() => {
+                    mouseOver(index)
+                  }}
+                  className={[
+                    "logo-item flex-1",
+                    item.isActive ? "active" : null,
+                  ].join(" ")}
+                >
+                  <img src={item.logo} alt={item.name} />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="news-center">
+        <h5 className="page-text page-text-title text-center">新闻中心</h5>
+        <div className="news-main flex_wrap flex flex_center">
+          {news.map((item, index) => {
+            return (
+              <div className="news-item flex">
+                <div className="news-time flex flex_column flex_center">
+                  <h4>{item.time}</h4>
+                  <span className="news-des">{item.year}</span>
+                </div>
+                <div className="news-content flex_1">
+                  <p className="news-title">{item.title}</p>
+                  <p className="news-des">{item.context}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

@@ -7,6 +7,9 @@
 .flex_1 {
   flex: 1;
 }
+.flex_2 {
+  flex: 2;
+}
 
 .flex_column {
   flex-direction: column;
@@ -54,10 +57,29 @@ body {
   border-radius: 2px;
   padding: 13px 4.43em;
   cursor: pointer;
+  display: inline-block;
+  border: 1px solid #3dbdb6;
   transition: all 0.5s linear;
 }
 .rpa-btn:hover {
-  box-shadow: 1px 1px 6px 6px #3dbdb663;
+  box-shadow: 1px 1px 3px 3px #3dbdb663;
+}
+[type="info"].rpa-btn {
+  background: #FFFFFF;
+  border: 1px solid #fff;
+  color: #3DBDB6;
+}
+[type="info"].rpa-btn:hover, [type="default"].rpa-btn:hover {
+  box-shadow: 2px 2px 3px 3px #c7ecea7a;
+}
+[type="default"].rpa-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #fff;
+}
+.btn-group .rpa-btn {
+  margin-left: 2em;
+  margin-top: 2em;
 }
 .full-height {
   height: 100vh;
@@ -68,6 +90,7 @@ body {
   position: fixed;
   width: 100%;
   height: 52px;
+  z-index: 9;
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.12);
 }
 #home.header {

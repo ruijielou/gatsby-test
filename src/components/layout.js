@@ -11,6 +11,14 @@ import Seo from "./seo"
 import Header from "./header"
 import { Link } from "gatsby"
 import useTranslations from "./useTranslations"
+const styles = {
+  background: '#3E3E58',
+  width: '100%',
+  height: '50px',
+  lineHeight: '50px',
+  textAlign: 'center',
+  color: '#ffffff'
+}
 
 const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
   const menuClick = e => {
@@ -95,22 +103,20 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
       </div>
       <div
         style={{
-          margin: `0 auto`,
-          maxWidth: "80%",
+          width: "100%",
+          overflow: "hidden",
           minHeight: "100vh",
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
+      <footer
+        style={styles}
+      >
+        {/* © {new Date().getFullYear()}, */}
+       版权所有2018-2022<a style={{color: "#fff"}} href="">赤兔信息科技有限公司</a> 粤ICP备16115240号
+        
+      </footer>
     </div>
   )
 }
