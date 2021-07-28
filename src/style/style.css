@@ -97,13 +97,17 @@ body {
   width: 100%;
   height: 52px;
   z-index: 9;
-  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.12); */
 }
 #home.header {
   background-color: #08182e;
 }
+/* #solution.header {
+  background: #3e3e58;
+} */
 [data-id="home"].header,
-[data-id="product"].header {
+[data-id="product"].header,
+[data-id="solution"].header {
   background: transparent !important;
   box-shadow: none;
 }

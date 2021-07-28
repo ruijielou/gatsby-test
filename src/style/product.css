@@ -1,12 +1,12 @@
 .product-container > div {
   padding: 0 10%;
 }
-.part-1 {
+.product-container .part-1 {
   background-image: url(../images/product/ditu.png);
   color: #fff;
   position: relative;
 }
-.part-1-main {
+.product-container .part-1-main {
   width: 40%;
 }
 .product-info {
