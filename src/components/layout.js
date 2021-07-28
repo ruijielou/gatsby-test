@@ -11,13 +11,17 @@ import Seo from "./seo"
 import Header from "./header"
 import { Link } from "gatsby"
 import useTranslations from "./useTranslations"
+import chitu from "../images/logo.png"
+import QRCode from "../images/home/erweima.png"
+// #3E3E58
 const styles = {
-  background: '#3E3E58',
-  width: '100%',
-  height: '50px',
-  lineHeight: '50px',
-  textAlign: 'center',
-  color: '#ffffff'
+  background: "#1F2532",
+  width: "100%",
+
+  lineHeight: "50px",
+  textAlign: "center",
+  fontSize: "12px",
+  color: "#9393a5",
 }
 
 const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
@@ -110,12 +114,61 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
       >
         <main>{children}</main>
       </div>
-      <footer
-        style={styles}
-      >
+      <footer style={styles}>
+        <div className="footer-content flex flex_between">
+          <div className="footer-list">
+            <div className="footer-logo">
+              <img src={chitu} />
+            </div>
+            <div className="footer-desc">
+              <p>
+                <span>联系电话:</span>400-1233-233
+              </p>
+              <p>
+                <span>加入我们:</span>672899876@qq.com
+              </p>
+              <p>
+                <span>商务合作:</span>12399872998
+              </p>
+              <p>
+                <span>技术支持:</span>14432223455
+              </p>
+              <p>
+                <span>公司地址:</span>河南省郑州市管城回族区正商蓝海广场
+              </p>
+            </div>
+          </div>
+          <div className="footer-list">
+            <div className="footer-logo">
+              <p>公司简介</p>
+            </div>
+            <div className="footer-desc">
+              <p>新闻动态</p>
+              <p>联系我们</p>
+            </div>
+          </div>
+          <div className="footer-list">
+            <div className="footer-logo">
+              <p>隐私和政策</p>
+            </div>
+            <div className="footer-desc">
+              <p>加入我们</p>
+            </div>
+          </div>
+          <div className="QRCode">
+            {/* <p className="page-text"></p> */}
+            <img src={QRCode} />
+            <img src={QRCode} />
+          </div>
+        </div>
         {/* © {new Date().getFullYear()}, */}
-       版权所有2018-2022<a style={{color: "#fff"}} href="">赤兔信息科技有限公司</a> 粤ICP备16115240号
-        
+        <div className="footer-bottom">
+          版权所有2018-2022
+          <a style={{ color: "#fff" }} href="">
+            赤兔信息科技有限公司
+          </a>{" "}
+          粤ICP备16115240号
+        </div>
       </footer>
     </div>
   )

@@ -404,7 +404,7 @@ const Home = i18data => {
           </div>
         </div>
       </div>
-      <div className="news-center">
+      <div className="news-center ">
         <h5 className="page-text page-text-title text-center">新闻中心</h5>
         <div className="news-main flex_wrap flex flex_center">
           {news.map((item, index) => {
@@ -422,6 +422,7 @@ const Home = i18data => {
             )
           })}
         </div>
+        <div className="text-center" style={{marginTop: '2em'}}><div className="rpa-btn">查看更多</div></div>
       </div>
     </div>
   )

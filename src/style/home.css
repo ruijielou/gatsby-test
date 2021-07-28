@@ -72,10 +72,10 @@
 .page-5 .value-item {
   width: 14%;
 }
-.product-information {
+.home_container .product-information {
   background: #3dbdb6;
 }
-.product-information .page-text {
+.home_container .product-information .page-text {
   font-family: PingFangSC-Regular;
   font-size: 30px;
   color: #ffffff;
@@ -109,7 +109,7 @@
   background: rgba(0, 0, 0, 0.6);
   line-height: 1.8;
   overflow: auto;
-  max-height: 371px;
+  max-height: 367px;
   /* transform: scale(.3); */
   transform: translateX(999px);
   /* transition: all 5s linear; */
@@ -144,6 +144,7 @@
   cursor: pointer;
   margin: 10px;
   padding: 0 10px;
+  border-radius: 4px;
   border: 1px solid #3dbdb6;
 }
 .news-item:hover {
@@ -153,18 +154,19 @@
   width: 8em;
   align-items: flex-end;
   padding-right: 15px;
-  line-height:2;
+  line-height: 2;
 }
 .news-time h4 {
-  font-size:22px;
+  font-size: 22px;
 }
 .news-title {
   font-size: 14px;
 }
 .news-des {
   font-size: 12px;
-  color: #EEEEEE;
+  color: #eeeeee;
 }
+
 @keyframes moveX {
   0% {
     /* transform: scale(.3); */
@@ -212,5 +214,9 @@
   }
   .news-time {
     width: 5em;
+  }
+  .product-desc {
+    padding: 10px;
+    font-size: 12px;
   }
 }

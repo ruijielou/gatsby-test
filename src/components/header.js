@@ -5,21 +5,9 @@ import SetLanguage from "./setLanguage"
 
 const Header = ({ menu, current, language, siteTitle }) => {
   let currentIndex = 1;
-  window.onscroll = () => {
-    console.log(window.scrollY, "window.scrollY")
-    if (window.scrollY > 150) {
-      document.querySelector('.header').dataset.id = ""
-    }
-    if (window.scrollY <= 150) {
-      document.querySelector('.header').dataset.id = current
-    }
-    // console.log(currentIndex * window.screen.height, "currentIndex * window.screen.height");
-      // document.querySelector('.header').dataset.id = current
-    
-  }
 
   return (
-    <header className="header" id={current} data-id={current}>
+    <header className="header" id={current} data-qid={current} data-id={current}>
       <div
         className="flex h_100"
         style={{
