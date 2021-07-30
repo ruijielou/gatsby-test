@@ -24,14 +24,68 @@ const styles = {
   color: "#9393a5",
 }
 
-const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
+const Layout = ({ children, id, locale }) => {
+  const language = locale?.siteLanguage || "zh";
+  
+  const {
+    aboutusMenu,
+    partnerMenu,
+    solutionMenu,
+    productMenu,
+    homeMenu,
+  } = useTranslations(language)
+  const headerData = {
+    en: null,
+    zh: null,
+  }
+  let menuData = headerData[language]
+  if (!menuData) {
+    menuData = [
+      {
+        id: "home",
+        path: "/home",
+        label: homeMenu,
+        isShow: true
+      },
+      {
+        id: "product",
+        path: "/product",
+        label: productMenu,
+        isShow: true
+      },
+      {
+        id: "solution",
+        path: "/solution",
+        label: solutionMenu,
+        isShow: true
+      },
+      {
+        id: "partner",
+        path: "/partner",
+        label: partnerMenu,
+        isShow: true
+      },
+      {
+        id: "aboutus",
+        path: "/aboutus",
+        label: aboutusMenu,
+        isShow: true
+      },
+      {
+        id: "404",
+        path: "/404",
+        label: "404: Not found",
+        isShow: false
+      }
+    ]
+  }
   const menuClick = e => {
     e.preventDefault()
     document.querySelector(".menu").classList.toggle("open")
     document.querySelector(`.menu-overlay`).classList.toggle("open")
   }
   const { languageFiled, navigation } = useTranslations(language)
-
+  const seoTitle = menuData.find(item => item.id === id).label
   return (
     <div data-bg={id}>
       <Seo title={seoTitle} />
@@ -39,7 +93,6 @@ const Layout = ({ children, sitedata, id, menuData, seoTitle, language }) => {
         current={id}
         menu={menuData}
         language={language}
-        siteTitle={sitedata ? sitedata.title : `Title`}
       />
       <div className="menu" data-menu={id}>
         <span className="menu-circle"></span>

@@ -1,11 +1,12 @@
 import * as React from "react"
-import "../style/product.css"
+import Layout from "../components/layout"
+import "../style/product.scss"
 // import { StaticImage } from "gatsby-plugin-image"
 import tu1 from "../images/product/tu_1.png"
 import tu2 from "../images/product/tu_2.png"
 import tu3 from "../images/product/tu_3.png"
 
-const Product = () => {
+const Product = ({ pageContext: { locale } }) => {
   const part1Data = [
     {
       title: "快速部署",
@@ -25,6 +26,10 @@ const Product = () => {
     },
   ]
   return (
+    <Layout
+    id="product"
+    locale={locale}
+  >
     <div className="product-container">
       <div className="part-1 bg_container flex flex_center full-height">
         <div className="part-1-main flex flex_column flex_center">
@@ -113,6 +118,7 @@ const Product = () => {
         </div>
       </div>
     </div>
+    </Layout>
   )
 }
 

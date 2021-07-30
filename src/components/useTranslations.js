@@ -6,26 +6,19 @@ const useTranslations = locale => {
   // Grab the locale (passed through context) from the Context Provider
   // const { locale } =
   // Query the JSON files in <rootDir>/i18n/translations
-  console.log(query, "query")
   const { rawData } = useStaticQuery(query)
 
   // Simplify the response from GraphQL
   const simplified = rawData.edges.map(item => {
-    console.log(item)
     return {
       name: item.node.name,
       translations: item.node.translations,
     }
   })
-  console.log(rawData, "rawData")
-  console.log(simplified, "simplified")
 
   // Only return translations for the current locale
-  console.log(locale, "locale");
-  console.log(simplified, "simplified");
   const { translations } =
     simplified && simplified.filter(lang => lang.name === locale)[0]
-  // console.log( translations, "translations", locale);
 
   return translations
 }

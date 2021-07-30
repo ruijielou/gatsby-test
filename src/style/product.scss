@@ -1,0 +1,121 @@
+
+.product-container {
+  & > div {
+    padding: 0 10%;
+  }
+  .part-1 {
+    background-image: url(../images/product/ditu.png);
+    color: #fff;
+    position: relative;
+  }
+  .part-1-main {
+    width: 40%;
+  }
+  .product-info {
+    height: 46px;
+    width: 100%;
+    background-image: url(../images/product/product-info.png);
+    background-size: contain;
+  }
+  .product-top-desc {
+    margin: 2em;
+    font-family: HiraginoSansGB-W3;
+    font-size: 18px;
+    color: #ffffff;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    text-indent: 2em;
+  }
+  .product-info-list {
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    padding: 0 7%;
+  }
+  .info-label {
+    font-family: HiraginoSansGB-W6;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0;
+    margin: 10px 0;
+    position: relative;
+  }
+  /* .info-label:hover::after {
+    width: max-content;
+  } */
+  .info-label::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 2em;
+    height: 2px;
+    background: #3dbdb6;
+  }
+  .info-item {
+    padding: 0 1em;
+    position: relative;
+  }
+  .info-data {
+    word-wrap: break-word;
+    padding: 1em 0;
+    /* width: 80%; */
+    font-family: HiraginoSansGB-W3;
+    font-size: 12px;
+    color: #abb1b1;
+    letter-spacing: 0;
+    line-height: 18px;
+  }
+  .info-item + .info-item::after {
+    content: "";
+    position: absolute;
+    height: 80%;
+    top: 50%;
+    left: 0;
+    width: 1px;
+    background-color: #ccc;
+    transform: translateY(-50%);
+  }
+  .part-2,
+  .part-4 {
+    background-color: #fff;
+  }
+
+  .part-title {
+    font-family: HiraginoSansGB-W6;
+    font-size: 26px;
+    color: #000000;
+    letter-spacing: 0;
+  }
+  .primary_color {
+    color: #3dbdb6;
+  }
+  .part-2-content {
+    justify-content: center;
+  }
+  .part-2-content p {
+    font-family: HiraginoSansGB-W3;
+    font-size: 18px;
+    letter-spacing: 0;
+    max-width: 80%;
+  }
+  .part-3 {
+    background-image: url(../images/product/di.png);
+  }
+  .product-information {
+    padding: 2em 2em 4em 2em;
+    background-image: url(../images/product/dibutupian.png);
+    background-size: 101% 101%;
+  }
+  .product-information p {
+    font-family: PingFangSC-Regular;
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 0;
+    width: 80%;
+  }
+}

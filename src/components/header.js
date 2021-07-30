@@ -1,13 +1,31 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import SetLanguage from "./setLanguage"
 
-const Header = ({ menu, current, language, siteTitle }) => {
-  let currentIndex = 1;
-
+const Header = ({ menu, current, language }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+          }
+        }
+      }
+    `
+  )
+  const siteTitle = site.siteMetadata?.title
   return (
-    <header className="header" id={current} data-qid={current} data-id={current}>
+    <header
+      className="header"
+      id={current}
+      data-qid={current}
+      data-id={current}
+    >
       <div
         className="flex h_100"
         style={{
@@ -29,18 +47,20 @@ const Header = ({ menu, current, language, siteTitle }) => {
         <nav className="nav flex flex_center flex_1">
           {menu &&
             menu.map((item, index) => {
-              return (
-                <Link
-                  key={index}
-                  to={language === "en" ? `/en${item.path}` : item.path}
-                  className={[
-                    "nav_item",
-                    current === item.id ? "active" : null,
-                  ].join(" ")}
-                >
-                  {item.label}
-                </Link>
-              )
+              if (item.isShow) {
+                return (
+                  <Link
+                    key={index}
+                    to={language === "en" ? `/en${item.path}` : item.path}
+                    className={[
+                      "nav_item",
+                      current === item.id ? "active" : null,
+                    ].join(" ")}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              }
             })}
         </nav>
         <span className="flex flex_center nav-right">

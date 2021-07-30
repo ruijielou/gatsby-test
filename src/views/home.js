@@ -1,5 +1,6 @@
 import * as React from "react"
-import "../style/home.css"
+import Layout from "../components/layout"
+import "../style/home.scss"
 // import homeText from "../images/home/home-text.png"
 import jiqiren from "../images/home/jiqiren.png"
 import icon_1 from "../images/home/icon_1.svg"
@@ -39,7 +40,8 @@ import pinpai_4 from "../images/home/pinpai_4.png"
 import pinpai_5 from "../images/home/pinpai_5.png"
 
 const staticImg = [img1, img2, img3, img4, img5, img6, img7, img8]
-const Home = i18data => {
+const Home = ({ pageContext: { content, locale } }) => {
+
   const page3 = [
     {
       icon: icon_1,
@@ -255,176 +257,185 @@ const Home = i18data => {
   ]
 
   return (
-    <div className="home_container">
-      <div className=" page-1 flex flex_column justify-center">
-        <div className="homeText">
-          {/* <img height="46" src={homeText} /> */}
-        </div>
-        <p className="page-text home-page-cotent">
-          帮助用户连接不同的系统和服务，处理重复有规律的劳动，实现工作流程自动化，更专注提高工作效率，让企业“事半功倍”并且已经完成在保险、金融、医疗保健等领域的场景深耕，联合合作伙伴具备深度定制化能力和稳定交付能力，积累了丰富的行业可行性解决方案。
-        </p>
-        <div style={{ marginTop: "2em" }}>
-          <span className="rpa-btn">申请试用</span>
-        </div>
-      </div>
-      <div className=" page-2 flex flex_center">
-        <div className="flex_1">
-          <img style={{ width: "80%" }} alt="RPA" src={jiqiren} />
-        </div>
-        <div className="flex_1">
-          <p className="page-text page-text-title">什么是RPA机器人流程自动化</p>
-          <p className="page-text">
-            能够代替或者协助人类在计算机、手机等智能设备中完成重复性工作与任务
+    <Layout
+      id="home"
+      locale={locale}
+    >
+      <div className="home_container">
+        <div className=" page-1 flex flex_column justify-center">
+          <div className="homeText">
+            {/* <img height="46" src={homeText} /> */}
+          </div>
+          <p className="page-text home-page-cotent">
+            帮助用户连接不同的系统和服务，处理重复有规律的劳动，实现工作流程自动化，更专注提高工作效率，让企业“事半功倍”并且已经完成在保险、金融、医疗保健等领域的场景深耕，联合合作伙伴具备深度定制化能力和稳定交付能力，积累了丰富的行业可行性解决方案。
           </p>
-          <p className="page-text">
-            RPA（Robotic Process
-            Automation）是基于软件机器人和人工智能（AI）的新型企业业务流程自动化技术，也称为数字化劳动力，通过零集成的方式帮助企业员工完成重复密集的工作，帮助企业提升核心竞争力。
+          <div style={{ marginTop: "2em" }}>
+            <span className="rpa-btn">申请试用</span>
+          </div>
+        </div>
+        <div className=" page-2 flex flex_center">
+          <div className="flex_1">
+            <img style={{ width: "80%" }} alt="RPA" src={jiqiren} />
+          </div>
+          <div className="flex_1">
+            <p className="page-text page-text-title">
+              什么是RPA机器人流程自动化
+            </p>
+            <p className="page-text">
+              能够代替或者协助人类在计算机、手机等智能设备中完成重复性工作与任务
+            </p>
+            <p className="page-text">
+              RPA（Robotic Process
+              Automation）是基于软件机器人和人工智能（AI）的新型企业业务流程自动化技术，也称为数字化劳动力，通过零集成的方式帮助企业员工完成重复密集的工作，帮助企业提升核心竞争力。
+            </p>
+          </div>
+        </div>
+        <div className=" page-3 flex flex_column flex_center">
+          <p className="page-text page-text-title text-center">
+            RPA可以为您带来什么价值
           </p>
+          <ul className="flex flex_around flex_wrap">
+            {page3.map((item, index) => {
+              return (
+                <li className="text-center value-item" key={index}>
+                  <img
+                    style={{ marginBottom: "1em" }}
+                    alt={item.title}
+                    src={item.icon}
+                  />
+                  <h5 className="page-text sub-title">{item.title}</h5>
+                  <p className="page-des-text">{item.subTile}</p>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-      </div>
-      <div className=" page-3 flex flex_column flex_center">
-        <p className="page-text page-text-title text-center">
-          RPA可以为您带来什么价值
-        </p>
-        <ul className="flex flex_around flex_wrap">
-          {page3.map((item, index) => {
-            return (
-              <li className="text-center value-item" key={index}>
-                <img
-                  style={{ marginBottom: "1em" }}
-                  alt={item.title}
-                  src={item.icon}
-                />
-                <h5 className="page-text sub-title">{item.title}</h5>
-                <p className="page-des-text">{item.subTile}</p>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      <div className="page-4">
-        <h5 className="page-text page-text-title text-center">
-          这些行业都可以使用RPA解决方案
-        </h5>
-        <p className="page-text text-center">
-          在未来，那些你不想做的枯燥的工作，也许真的可以不做了，重复化、标准化的工作都可以让RPA机器人帮你完成。
-        </p>
-        <ul className="main-content flex flex_around flex_wrap">
-          {page4.map((item, index) => {
-            return (
-              <li
-                className="text-center value-item flex flex_column"
-                key={index}
-              >
-                <img src={staticImg[index]} alt={item} />
-                <p className="page-text text-left">{item}</p>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      <div className="page-5">
-        <h5 className="page-text page-text-title text-center">工作流程</h5>
-        <ul className="main-content flex flex_around flex_wrap">
-          {page5.map((item, index) => {
-            return (
-              <li
-                className="text-center value-item flex flex_column flex_center"
-                key={index}
-              >
-                <img
-                  style={{ width: item.type == 2 ? "16.5px" : "" }}
-                  alt={item.title}
-                  src={item.icon}
-                />
-                <p className="page-text" style={{ height: "18px" }}>
-                  {item.title}
-                </p>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
-      {/* Product information 产品资讯 */}
-      <div className="product-information flex flex_column flex_center">
-        <p className="page-text">
-          产品资讯，寻求RPA帮助 都可以联系我们，开启赤兔RPA之旅，解放你的双手
-        </p>
-        <div className="btn-group">
-          <span className="rpa-btn" type="info">
-            申请试用
-          </span>
-          <span className="rpa-btn" type="default">
-            联系我们
-          </span>
+        <div className="page-4">
+          <h5 className="page-text page-text-title text-center">
+            这些行业都可以使用RPA解决方案
+          </h5>
+          <p className="page-text text-center">
+            在未来，那些你不想做的枯燥的工作，也许真的可以不做了，重复化、标准化的工作都可以让RPA机器人帮你完成。
+          </p>
+          <ul className="main-content flex flex_around flex_wrap">
+            {page4.map((item, index) => {
+              return (
+                <li
+                  className="text-center value-item flex flex_column"
+                  key={index}
+                >
+                  <img src={staticImg[index]} alt={item} />
+                  <p className="page-text text-left">{item}</p>
+                </li>
+              )
+            })}
+          </ul>
         </div>
-      </div>
-      <div className="home-partner">
-        <h5 className="page-text page-text-title text-center">
-          我们的合作伙伴
-        </h5>
-        <div className="product-main">
-          {productData.map((item, index) => {
-            return (
-              <div
-                key={index}
-                className={[
-                  "product-item flex",
-                  item.isActive ? "active" : null,
-                ].join(" ")}
-              >
-                <div
-                  className="product-img flex_2"
-                  style={{ backgroundImage: `url(${item.img})` }}
-                ></div>
-                <div className="product-desc flex_1">
-                  <p className="text-left">{item.name}</p>
-                  <p>{item.desc}</p>
-                </div>
-              </div>
-            )
-          })}
-          <div className="product-logo flex flex_between">
+        <div className="page-5">
+          <h5 className="page-text page-text-title text-center">工作流程</h5>
+          <ul className="main-content flex flex_around flex_wrap">
+            {page5.map((item, index) => {
+              return (
+                <li
+                  className="text-center value-item flex flex_column flex_center"
+                  key={index}
+                >
+                  <img
+                    style={{ width: item.type == 2 ? "16.5px" : "" }}
+                    alt={item.title}
+                    src={item.icon}
+                  />
+                  <p className="page-text" style={{ height: "18px" }}>
+                    {item.title}
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        {/* Product information 产品资讯 */}
+        <div className="product-information flex flex_column flex_center">
+          <p className="page-text">
+            产品资讯，寻求RPA帮助 都可以联系我们，开启赤兔RPA之旅，解放你的双手
+          </p>
+          <div className="btn-group">
+            <span className="rpa-btn" type="info">
+              申请试用
+            </span>
+            <span className="rpa-btn" type="default">
+              联系我们
+            </span>
+          </div>
+        </div>
+        <div className="home-partner">
+          <h5 className="page-text page-text-title text-center">
+            我们的合作伙伴
+          </h5>
+          <div className="product-main">
             {productData.map((item, index) => {
               return (
                 <div
                   key={index}
-                  onClick={() => {
-                    mouseOver(index)
-                  }}
                   className={[
-                    "logo-item flex-1",
+                    "product-item flex",
                     item.isActive ? "active" : null,
                   ].join(" ")}
                 >
-                  <img src={item.logo} alt={item.name} />
+                  <div
+                    className="product-img flex_2"
+                    style={{ backgroundImage: `url(${item.img})` }}
+                  ></div>
+                  <div className="product-desc flex_1">
+                    <p className="text-left">{item.name}</p>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              )
+            })}
+            <div className="product-logo flex flex_between">
+              {productData.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      mouseOver(index)
+                    }}
+                    className={[
+                      "logo-item flex-1",
+                      item.isActive ? "active" : null,
+                    ].join(" ")}
+                  >
+                    <img src={item.logo} alt={item.name} />
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+        <div className="news-center ">
+          <h5 className="page-text page-text-title text-center">新闻中心</h5>
+          <div className="news-main flex_wrap flex flex_center">
+            {news.map((item, index) => {
+              return (
+                <div className="news-item flex">
+                  <div className="news-time flex flex_column flex_center">
+                    <h4>{item.time}</h4>
+                    <span className="news-des">{item.year}</span>
+                  </div>
+                  <div className="news-content flex_1">
+                    <p className="news-title">{item.title}</p>
+                    <p className="news-des">{item.context}</p>
+                  </div>
                 </div>
               )
             })}
           </div>
+          <div className="text-center" style={{ marginTop: "2em" }}>
+            <div className="rpa-btn">查看更多</div>
+          </div>
         </div>
       </div>
-      <div className="news-center ">
-        <h5 className="page-text page-text-title text-center">新闻中心</h5>
-        <div className="news-main flex_wrap flex flex_center">
-          {news.map((item, index) => {
-            return (
-              <div className="news-item flex">
-                <div className="news-time flex flex_column flex_center">
-                  <h4>{item.time}</h4>
-                  <span className="news-des">{item.year}</span>
-                </div>
-                <div className="news-content flex_1">
-                  <p className="news-title">{item.title}</p>
-                  <p className="news-des">{item.context}</p>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-        <div className="text-center" style={{marginTop: '2em'}}><div className="rpa-btn">查看更多</div></div>
-      </div>
-    </div>
+    </Layout>
   )
 }
 

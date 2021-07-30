@@ -11,43 +11,33 @@ const locales = require(`./config/i18n.js`);
 exports.createPages = async ({ graphql, page, actions }) => {
   const { createPage } = actions
   // deletePage(page)
-  const renderPage = require.resolve(`./src/templates/pageTemplate.js`)
   const pages = {
     home: {
       id: "home",
       path: "/home",
-      component: renderPage,
+      component: require.resolve(`./src/views/home.js`),
     },
     product: {
       id: "product",
       path: "/product",
-      component: renderPage,
+      component: require.resolve(`./src/views/product.js`),
     },
     aboutus: {
       id: "aboutus",
       path: "/aboutus",
-      component: renderPage,
+      component: require.resolve(`./src/views/aboutus.js`),
     },
     solution: {
       id: "solution",
       path: "/solution",
-      component: renderPage,
+      component: require.resolve(`./src/views/solution.js`),
     },
     partner: {
       id: "partner",
       path: "/partner",
-      component: renderPage,
+      component: require.resolve(`./src/views/partner.js`),
     },
   }
-  const data = await graphql(`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
   
   Object.keys(locales).map(lang => {
     // Use the values defined in "locales" to construct the path
@@ -60,7 +50,7 @@ exports.createPages = async ({ graphql, page, actions }) => {
         createPage({
           path: localizedPath,
           component: element.component,
-          context: { id: element.id, content: data, locale: locales[lang]},
+          context: { locale: locales[lang]},
         })
       }
     }
@@ -86,7 +76,6 @@ exports.createPages = async ({ graphql, page, actions }) => {
 
 // exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
 //   const config = getConfig();
-//   console.log(config);
 //   // config.output.publicPath = "./"
 
 //       actions.setWebpackConfig({

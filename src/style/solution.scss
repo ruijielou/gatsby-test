@@ -1,0 +1,202 @@
+.Solution-container {
+  & > div {
+    padding: 0 10%;
+  }
+  .part-1 {
+    background-image: url(../images/solution/ditu.png);
+    color: #fff;
+    position: relative;
+  }
+
+  .solution-info {
+    height: 46px;
+    width: 100%;
+    background-image: url(../images/solution/solution-info.png);
+    background-size: contain;
+  }
+  .part-1 .rpa-btn {
+    margin: 10vh;
+  }
+  .solution-top-desc {
+    font-family: HiraginoSansGB-W3;
+    font-size: 18px;
+    // color: #abb1b1;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    width: 35%;
+    position: absolute;
+    bottom: 3em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .solution-main {
+    background-color: #fff;
+    .tab-list {
+      padding: 2em 0;
+      .tab-item {
+        cursor: pointer;
+        span {
+          font-family: HiraginoSansGB-W6;
+          font-size: 20px;
+          color: #98a3ad;
+          letter-spacing: 0;
+          margin-top: 1em;
+        }
+        &.active span {
+          color: #505c71;
+        }
+      }
+    }
+    .solution-details {
+      // padding: 0 2em;
+      & > div {
+        padding: 0 3em;
+      }
+      background: #f5f5f5;
+      .solution-details-top {
+        height: 308px;
+        background-image: url(../images/solution/tu_2.png);
+        background-size: contain;
+        & > div {
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 2px;
+          padding: 2em;
+          width: 45%;
+          p {
+            font-family: HiraginoSansGB-W3;
+            font-size: 16px;
+            color: #ffffff;
+            letter-spacing: 0;
+            line-height: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+          }
+        }
+        .details-top-title {
+          font-family: DFZongYiW9;
+          font-size: 30px;
+          color: #ffffff;
+          letter-spacing: 0;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      }
+      .solution-details-desc {
+        padding: 2em;
+        font-family: HiraginoSansGB-W3;
+        font-size: 16px;
+        color: #000000;
+        letter-spacing: 0;
+        line-height: 18px;
+      }
+      .solution-labels {
+        padding: 0 2em 2em 2em;
+        span {
+          padding: 3px;
+        }
+      }
+      .module-title {
+        font-family: HiraginoSansGB-W6;
+        font-size: 22px;
+        color: #000000;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+        margin-top: 2em;
+        span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      .solution-painPoints {
+        .module-item {
+          width: 30%;
+          padding: 1em;
+          margin-bottom: 10px;
+          margin-right: 3%;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+          background-image: url(../images/solution/1.png);
+
+          p {
+            margin-left: 20%;
+          }
+        }
+        .module-item:nth-child(2) {
+          background-image: url(../images/solution/2.png);
+        }
+        .module-item:nth-child(3) {
+          background-image: url(../images/solution/3.png);
+        }
+        .module-item:nth-child(4) {
+          background-image: url(../images/solution/4.png);
+        }
+        .module-item:nth-child(5) {
+          background-image: url(../images/solution/5.png);
+        }
+      }
+      .solution-appSense {
+        .module-item {
+          width: 33%;
+          padding: 1em;
+          margin-bottom: 10px;
+          h5 {
+            margin: 8px 0;
+            font-size: 16px;
+          }
+          p {
+            font-family: HiraginoSansGB-W3;
+            font-size: 14px;
+            color: #3e3e58;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin: 0;
+          }
+        }
+      }
+      .solution-serviceAdvantage {
+        .module-content {
+          img {
+            margin: 1em 1.5em;
+          }
+          .module-item {
+            padding: 8px 10px;
+            width: 47%;
+            background: #ffffff;
+            border-radius: 45px;
+            margin-bottom: 1.5em;
+            justify-content: flex-start;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  .product-information {
+    padding: 2em 2em 4em 2em;
+    background-image: url(../images/product/dibutupian.png);
+    background-size: 101% 101%;
+    p {
+      font-family: PingFangSC-Regular;
+      font-size: 36px;
+      color: #ffffff;
+      letter-spacing: 0;
+      width: 80%;
+    }
+  }
+  .block {
+    width: 25px;
+    height: 25px;
+    border: 2px solid #0a0408;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      background-color: #3dbdb6;
+      left: 4px;
+      top: 4px;
+    }
+  }
+}
