@@ -168,6 +168,31 @@
           }
         }
       }
+      .solution-customerCase {
+        .module-content {
+          position: relative;
+        }
+        .solution-customerCase-desc {
+          position: absolute;
+          right: 0;
+          bottom: 10%;
+          width: 28vw;
+          line-height: 1.5;
+          font-family: HiraginoSansGB-W3;
+          font-size: 14px;
+          color: #4d4d65;
+          letter-spacing: 0;
+          line-height: 26px;
+          background: rgba(255, 255, 255, 0.6);
+          border-radius: 4px;
+          padding: 2em;
+          h5 {
+            font-size: 18px;
+            color: #000000;
+            line-height: 2;
+          }
+        }
+      }
     }
   }
   .product-information {

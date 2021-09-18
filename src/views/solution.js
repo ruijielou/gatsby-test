@@ -146,9 +146,10 @@ const Solution = ({ pageContext: { locale } }) => {
           ],
         },
         customerCase: {
+          title: "客户案例",
           img: kehuanli,
-          title: "奥康",
-          desc:
+          caseName: "奥康",
+          caseDesc:
             "赤兔智能为电商服务平台奥康鞋业打造全新的智能客服助手，通过提供FAQ+多轮对话技术+VR语音服务，降低人工转接率，提升自助服务占比。大大减轻人工客服和运维的压力，实现更丰富的智能服务场景，不断提升企业的服务效率。",
         },
       },
@@ -301,6 +302,19 @@ const Solution = ({ pageContext: { locale } }) => {
                     </div>
                   )
                 })}
+              </div>
+            </div>
+            <div className="solution-customerCase">
+              <h5 className="module-title">
+                <span className="block"></span>
+                <span>{currentData.customerCase.title}</span>
+              </h5>
+              <div className="module-content">
+                <img src={currentData.customerCase.img} />
+                <div className="solution-customerCase-desc">
+                  <h5>{currentData.customerCase.caseName}</h5>
+                  {currentData.customerCase.caseDesc}
+                </div>
               </div>
             </div>
           </div>
